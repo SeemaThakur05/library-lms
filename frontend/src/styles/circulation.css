@@ -1,0 +1,59 @@
+/* =========================
+   CIRCULATION
+========================= */
+
+.circulation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.circulation-table th,
+.circulation-table td {
+  font-size: 13px;
+  padding: 10px 6px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.overdue-row {
+  background: #fee2e2 !important;
+}
+
+.fine-amount {
+  font-weight: bold;
+  color: #dc2626;
+}
+
+.issue-row {
+  background: #fff;
+}
+
+.returned-row {
+  background: #f8fafc;
+}
+
+.scan-input {
+  border: 2px solid #2563eb !important;
+  background: #eff6ff;
+}
+
+.scan-hint {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+
+.circulation-actions {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+
+.circulation-actions button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 8px;
+}

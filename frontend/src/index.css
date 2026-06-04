@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.catalog-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.catalog-table {
+  width: 100%;
+  min-width: 1050px;
+  table-layout: fixed;
+}
+
+.catalog-table th,
+.catalog-table td {
+  vertical-align: middle;
+}
+
+.catalog-table th:nth-child(1),
+.catalog-table td:nth-child(1) {
+  width: 65px;
+  text-align: center;
+}
+
+.catalog-table th:nth-child(2),
+.catalog-table td:nth-child(2) {
+  width: 95px;
+}
+
+.catalog-table th:nth-child(3),
+.catalog-table td:nth-child(3) {
+  width: 150px;
+}
+
+.catalog-table th:nth-child(4),
+.catalog-table td:nth-child(4) {
+  width: 130px;
+}
+
+.catalog-table th:nth-child(5),
+.catalog-table td:nth-child(5) {
+  width: 130px;
+}
+
+.catalog-table th:nth-child(6),
+.catalog-table td:nth-child(6) {
+  width: 70px;
+}
+
+.catalog-table th:nth-child(7),
+.catalog-table td:nth-child(7) {
+  width: 90px;
+}
+
+.catalog-table th:nth-child(8),
+.catalog-table td:nth-child(8) {
+  width: 110px;
+}
+
+.catalog-table th:nth-child(9),
+.catalog-table td:nth-child(9) {
+  width: 110px;
+  text-align: center;
+}
+
+.catalog-table th:nth-child(10),
+.catalog-table td:nth-child(10) {
+  width: 170px;
+  min-width: 170px;
+  max-width: 170px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.catalog-table td:nth-child(10) {
+  padding-top: 14px;
+}
+
+.catalog-table .action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.catalog-table .action-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalog-table .action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+.main-area {
+  flex: 1;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.catalog-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.catalog-table {
+  min-width: 1200px;
+}
