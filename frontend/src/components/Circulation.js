@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "https://library-lms-backend.onrender.com";
 
 function Circulation({ books = [], setBooks, students = [] }) {
   const librarySettings =
@@ -274,7 +274,7 @@ function Circulation({ books = [], setBooks, students = [] }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/issues/return/${record._id}`,
+        `https://library-lms-backend.onrender.com/api/issues/return/${record._id}`,
         {
           method: "PUT",
           headers: {

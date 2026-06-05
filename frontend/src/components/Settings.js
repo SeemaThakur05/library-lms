@@ -53,7 +53,7 @@ function Settings() {
 const fetchUsers = async () => {
   try {
     const response = await fetch(
-      "http://localhost:5000/api/auth/users"
+      "https://library-lms-backend.onrender.com/api/auth/users"
     );
 
     const data = await response.json();
@@ -91,7 +91,7 @@ const fetchUsers = async () => {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/api/auth/users",
+      "https://library-lms-backend.onrender.com/api/auth/users",
       {
         method: "POST",
         headers: {
@@ -130,7 +130,7 @@ const fetchUsers = async () => {
 
   try {
     await fetch(
-      `http://localhost:5000/api/auth/users/${id}`,
+      `https://library-lms-backend.onrender.com/api/auth/users/${id}`,
       {
         method: "DELETE",
       }

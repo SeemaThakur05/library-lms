@@ -18,7 +18,7 @@ import LibraryCards from "./components/LibraryCards";
 import Backup from "./components/Backup";
 import Settings from "./components/Settings";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "https://library-lms-backend.onrender.com";
 
 function App() {
   const emptyBook = {

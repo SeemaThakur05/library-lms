@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "https://library-lms-backend.onrender.com";
 
 function Dashboard({ books = [], students = [] }) {
   const [records, setRecords] = useState([]);

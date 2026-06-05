@@ -6,7 +6,7 @@ function NoDues() {
   const [studentRecords, setStudentRecords] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/issues")
+    fetch("https://library-lms-backend.onrender.com/api/issues")
       .then((res) => res.json())
       .then((data) => setRecords(data))
       .catch(() => setRecords([]));
