@@ -8,6 +8,44 @@ const User = require("../models/user");
 router.get("/test", (req, res) => {
   res.json({ message: "Auth route working" });
 });
+// ======================
+// SEED DEFAULT ADMIN
+// ======================
+router.get("/seed", async (req, res) => {
+  try {
+    const existingUser = await User.findOne({
+      username: "admin",
+    });
+
+    if (existingUser) {
+      return res.json({
+        message: "Admin already exists",
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(
+      "admin123",
+      10
+    );
+
+    await User.create({
+      name: "Administrator",
+      username: "admin",
+      password: hashedPassword,
+      role: "Super Admin",
+    });
+
+    res.json({
+      message: "Default admin created",
+      username: "admin",
+      password: "admin123",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
 
 // ======================
 // LOGIN
