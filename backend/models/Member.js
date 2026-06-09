@@ -4,7 +4,8 @@ const memberSchema = new mongoose.Schema(
   {
     memberType: { type: String, default: "Student" },
     name: { type: String, required: true },
-    className: { type: String, default: "" },
+    courseName: { type: String, default: "" },
+    year: { type: String, default: "" },
     rollNo: { type: String, default: "" },
     registrationNo: { type: String, default: "" },
     mobile: { type: String, default: "" },

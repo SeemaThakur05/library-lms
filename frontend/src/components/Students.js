@@ -1,13 +1,35 @@
 import { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL || "https://library-lms-backend.onrender.com";
+const courses = [
+  "B.A.",
+  "B.Com",
+  "BBA",
+  "BCA",
+  "B.Sc. Non-Medical",
+  "B.Sc. Computer Science",
+  "M.A. Punjabi",
+  "M.A. Political Science",
+  "M.Com",
+  "M.Sc. Chemistry",
+  "M.Sc. Mathematics",
+  "M.Sc. Biotechnology",
+  "B.Voc",
+  "M.Voc"
+];
 
+const years = [
+  "1st Year",
+  "2nd Year",
+  "3rd Year",
+];
 function Students({ students, setStudents }) {
   const emptyStudent = {
     memberType: "Student",
     name: "",
-    className: "",
+    courseName: "",
+    year: "",
     rollNo: "",
     registrationNo: "",
     mobile: "",
@@ -138,7 +160,8 @@ function Students({ students, setStudents }) {
     setStudent({
       memberType: member.memberType || "Student",
       name: member.name || "",
-      className: member.className || "",
+      courseName: member.courseName || "",
+      year: member.year || "",
       rollNo: member.rollNo || "",
       registrationNo: member.registrationNo || "",
       mobile: member.mobile || "",
@@ -234,7 +257,7 @@ function Students({ students, setStudents }) {
             row["Teacher Name"] ||
             row["Name"] ||
             "",
-          className:
+          courseName:
             row["Class"] ||
             row["Course"] ||
             row["Department"] ||
@@ -303,7 +326,7 @@ function Students({ students, setStudents }) {
     return (
       (s.memberType || "").toLowerCase().includes(text) ||
       (s.name || "").toLowerCase().includes(text) ||
-      (s.className || "").toLowerCase().includes(text) ||
+      (s.courseName || "").toLowerCase().includes(text) ||
       (s.rollNo || "").toLowerCase().includes(text) ||
       (s.registrationNo || "").toLowerCase().includes(text) ||
       (s.fatherName || "").toLowerCase().includes(text) ||
@@ -356,12 +379,42 @@ function Students({ students, setStudents }) {
           onChange={handleChange}
         />
 
-        <input
-          name="className"
-          placeholder="Class / Department"
-          value={student.className}
-          onChange={handleChange}
-        />
+        {student.memberType === "Student" ? (
+  <>
+    <select
+      name="courseName"
+      value={student.courseName}
+      onChange={handleChange}
+    >
+      <option value="">Select Course</option>
+      {courses.map((course) => (
+        <option key={course} value={course}>
+          {course}
+        </option>
+      ))}
+    </select>
+
+    <select
+      name="year"
+      value={student.year}
+      onChange={handleChange}
+    >
+      <option value="">Select Year</option>
+      {years.map((yr) => (
+        <option key={yr} value={yr}>
+          {yr}
+        </option>
+      ))}
+    </select>
+  </>
+) : (
+  <input
+    name="courseName"
+    placeholder="Department"
+    value={student.courseName}
+    onChange={handleChange}
+  />
+)}
 
         <input
           name="rollNo"
@@ -543,7 +596,10 @@ function Students({ students, setStudents }) {
 
                 <td>{s.memberType || "Student"}</td>
                 <td>{s.name}</td>
-                <td>{s.className}</td>
+                <td>
+  {s.courseName}
+  {s.year ? ` (${s.year})` : ""}
+</td>
                 <td>{s.rollNo}</td>
                 <td>{s.registrationNo}</td>
                 <td>{s.fatherName}</td>
