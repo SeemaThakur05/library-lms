@@ -123,9 +123,11 @@ function Students({ students, setStudents }) {
           return;
         }
 
-        setStudents(
-          students.map((s) => (s._id === editId ? updatedMember : s))
-        );
+        setStudents((prev) =>
+  prev.map((s) =>
+    s._id === editId ? updatedMember : s
+  )
+);
 
         setEditId(null);
         alert("Member updated successfully");
@@ -145,7 +147,7 @@ function Students({ students, setStudents }) {
           return;
         }
 
-        setStudents([newMember, ...students]);
+        setStudents((prev) => [...prev, newMember]);
         alert("Member saved successfully");
       }
 
