@@ -568,7 +568,9 @@ function Students({ students, setStudents }) {
         </thead>
 
         <tbody>
-          {filteredStudents.map((s) => {
+  {[...filteredStudents]
+    .sort((a, b) => Number(a.rollNo || a.id || 0) - Number(b.rollNo || b.id || 0))
+    .map((s) => {
             const history = getStudentHistory(s);
 
             const currentIssued = history.filter(
